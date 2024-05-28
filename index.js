@@ -102,6 +102,12 @@ const checkIfFoundWordEqualsEntrada = (found, entrada) => {
 }
 
 const verificarSimilaridade = (texto, entrada) => {
+
+  if(!texto || !entrada){
+    console.log('Word ou entrada vazia')
+    return
+  }
+
   const textoArray = texto.split("");
   const similarities = {};
   const words = [];
@@ -142,6 +148,7 @@ const verificarSimilaridade = (texto, entrada) => {
 
 
 const testCases = [
+  {entrada: '', texto: ''},
   { texto: 'Ana e Joaninha estudam juntas', entrada: 'Joana'  },
   { texto: 'joana', entrada: 'ana'  },
   { texto: 'ana', entrada: 'joana'  },
